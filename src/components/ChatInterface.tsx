@@ -34,16 +34,25 @@ const ChatInterface = () => {
     setMessages(prev => [...prev, userMessage]);
     setInputValue('');
 
-    // Simulate AI response
+    // Simulate AI response with more realistic responses
     setTimeout(() => {
+      const responses = [
+        "Based on your uploaded documents about machine learning, I can see strong connections between neural networks and deep learning concepts. The knowledge graph shows these are central nodes in your research.",
+        "I found interesting patterns in your notes. Your documents mention AI ethics 12 times, suggesting it's a key concern. Would you like me to summarize the ethical considerations you've collected?",
+        "Looking at your knowledge base, I notice you have extensive material on data science methodologies. I can help you create study guides or identify knowledge gaps.",
+        "Your research shows a focus on practical applications. I've identified 5 main themes across your documents. Shall I create a concept map showing how they interconnect?"
+      ];
+      
+      const randomResponse = responses[Math.floor(Math.random() * responses.length)];
+      
       const aiMessage: Message = {
         id: (Date.now() + 1).toString(),
-        text: "I understand you're asking about that topic. Based on your uploaded knowledge, I can see connections to machine learning concepts and neural networks. Would you like me to show you the knowledge graph visualization or provide a detailed explanation?",
+        text: randomResponse,
         sender: 'ai',
         timestamp: new Date()
       };
       setMessages(prev => [...prev, aiMessage]);
-    }, 1000);
+    }, 1200);
   };
 
   return (

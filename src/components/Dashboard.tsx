@@ -49,21 +49,24 @@ const Dashboard = () => {
           <TabsList className="grid w-full grid-cols-3 bg-card/50 backdrop-blur-md border border-neural-connection/20">
             <TabsTrigger 
               value="upload" 
-              className="flex items-center gap-2 data-[state=active]:bg-neural-node data-[state=active]:text-white"
+              data-tab="upload"
+              className="flex items-center gap-2 data-[state=active]:bg-neural-node data-[state=active]:text-white transition-all duration-300"
             >
               <Upload className="w-4 h-4" />
               Upload Knowledge
             </TabsTrigger>
             <TabsTrigger 
               value="chat"
-              className="flex items-center gap-2 data-[state=active]:bg-neural-node data-[state=active]:text-white"
+              data-tab="chat"
+              className="flex items-center gap-2 data-[state=active]:bg-neural-node data-[state=active]:text-white transition-all duration-300"
             >
               <MessageSquare className="w-4 h-4" />
               Chat & Explore
             </TabsTrigger>
             <TabsTrigger 
               value="graph"
-              className="flex items-center gap-2 data-[state=active]:bg-neural-node data-[state=active]:text-white"
+              data-tab="graph"
+              className="flex items-center gap-2 data-[state=active]:bg-neural-node data-[state=active]:text-white transition-all duration-300"
             >
               <Network className="w-4 h-4" />
               Knowledge Graph
@@ -113,14 +116,25 @@ const Dashboard = () => {
                 <div className="space-y-3">
                   {[
                     "Summarize the key points from my neural networks research",
-                    "How does machine learning relate to AI ethics?",
+                    "How does machine learning relate to AI ethics?", 
                     "Show me connections between my uploaded documents",
                     "What are the main concepts I should remember?"
                   ].map((question, index) => (
                     <Button
                       key={index}
                       variant="glass"
-                      className="w-full text-left justify-start h-auto p-4"
+                      className="w-full text-left justify-start h-auto p-4 hover:bg-white/20 transition-all duration-300"
+                      onClick={() => {
+                        // Simulate clicking on chat and sending the question
+                        setActiveTab('chat');
+                        setTimeout(() => {
+                          const chatInput = document.querySelector('input[placeholder="Ask about your knowledge..."]') as HTMLInputElement;
+                          if (chatInput) {
+                            chatInput.value = question;
+                            chatInput.focus();
+                          }
+                        }, 100);
+                      }}
                     >
                       <div>
                         <p className="text-sm text-white">{question}</p>

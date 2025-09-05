@@ -14,10 +14,12 @@ const HeroSection = () => {
       
       {/* Animated background elements */}
       <div className="absolute inset-0">
-        <div className="absolute top-20 left-20 w-2 h-2 bg-neural-node rounded-full animate-pulse"></div>
+        <div className="absolute top-20 left-20 w-2 h-2 bg-neural-node rounded-full animate-neural-pulse"></div>
         <div className="absolute top-40 right-32 w-1 h-1 bg-neural-highlight rounded-full animate-ping"></div>
-        <div className="absolute bottom-32 left-1/4 w-1.5 h-1.5 bg-neural-connection rounded-full animate-pulse delay-300"></div>
+        <div className="absolute bottom-32 left-1/4 w-1.5 h-1.5 bg-neural-connection rounded-full animate-neural-pulse delay-300"></div>
         <div className="absolute bottom-20 right-20 w-1 h-1 bg-neural-node rounded-full animate-ping delay-700"></div>
+        <div className="absolute top-1/2 left-10 w-1 h-1 bg-neural-highlight rounded-full animate-neural-pulse delay-500"></div>
+        <div className="absolute top-3/4 right-1/4 w-1.5 h-1.5 bg-neural-connection rounded-full animate-ping delay-1000"></div>
       </div>
 
       <div className="relative z-10 text-center max-w-5xl mx-auto px-6">
@@ -38,36 +40,56 @@ const HeroSection = () => {
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-          <Button variant="hero" size="lg" className="text-lg px-8 py-6">
+          <Button 
+            variant="hero" 
+            size="lg" 
+            className="text-lg px-8 py-6"
+            onClick={() => {
+              const dashboard = document.querySelector('[data-dashboard]');
+              if (dashboard) {
+                dashboard.scrollIntoView({ behavior: 'smooth' });
+              }
+            }}
+          >
             <Upload className="w-5 h-5" />
             Start Building Your Knowledge
           </Button>
-          <Button variant="glass" size="lg" className="text-lg px-8 py-6">
+          <Button 
+            variant="glass" 
+            size="lg" 
+            className="text-lg px-8 py-6"
+            onClick={() => {
+              const demoSection = document.querySelector('[data-demo]');
+              if (demoSection) {
+                demoSection.scrollIntoView({ behavior: 'smooth' });
+              }
+            }}
+          >
             <MessageSquare className="w-5 h-5" />
             See Demo
           </Button>
         </div>
 
         {/* Feature highlights */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
-          <div className="text-center">
-            <div className="w-16 h-16 bg-gradient-accent rounded-full flex items-center justify-center mx-auto mb-4">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16" data-demo>
+          <div className="text-center animate-fade-in">
+            <div className="w-16 h-16 bg-gradient-accent rounded-full flex items-center justify-center mx-auto mb-4 animate-float">
               <Upload className="w-8 h-8 text-white" />
             </div>
             <h3 className="text-xl font-semibold text-white mb-2">Upload Anything</h3>
             <p className="text-gray-400">Notes, PDFs, research papers - feed your AI brain with knowledge</p>
           </div>
           
-          <div className="text-center">
-            <div className="w-16 h-16 bg-gradient-accent rounded-full flex items-center justify-center mx-auto mb-4">
+          <div className="text-center animate-fade-in" style={{ animationDelay: '0.2s' }}>
+            <div className="w-16 h-16 bg-gradient-accent rounded-full flex items-center justify-center mx-auto mb-4 animate-float" style={{ animationDelay: '1s' }}>
               <MessageSquare className="w-8 h-8 text-white" />
             </div>
             <h3 className="text-xl font-semibold text-white mb-2">Chat & Learn</h3>
             <p className="text-gray-400">Ask questions, get summaries, explore connections in natural language</p>
           </div>
           
-          <div className="text-center">
-            <div className="w-16 h-16 bg-gradient-accent rounded-full flex items-center justify-center mx-auto mb-4">
+          <div className="text-center animate-fade-in" style={{ animationDelay: '0.4s' }}>
+            <div className="w-16 h-16 bg-gradient-accent rounded-full flex items-center justify-center mx-auto mb-4 animate-float" style={{ animationDelay: '2s' }}>
               <Network className="w-8 h-8 text-white" />
             </div>
             <h3 className="text-xl font-semibold text-white mb-2">Knowledge Graph</h3>
