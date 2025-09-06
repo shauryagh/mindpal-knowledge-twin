@@ -47,6 +47,25 @@
 * **Database**: MongoDB or PostgreSQL
 
 ---
+## 👨‍💻 Team Members
+
+- **Shaurya Goyal**  
+  [![GitHub](https://img.shields.io/badge/GitHub-000?logo=github&logoColor=white)](https://github.com/shauryagh)
+  [![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/shaurya1207/)
+
+- **Nishchay Garg**  
+  [![GitHub](https://img.shields.io/badge/GitHub-000?logo=github&logoColor=white)](https://github.com/Nishchay71177)
+  [![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/nishchay-garg-a04994351/)
+
+- **Pavani Sharma**  
+  [![GitHub](https://img.shields.io/badge/GitHub-000?logo=github&logoColor=white)](https://github.com/pavanisharma18)
+  [![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/pavani-sharma-250444361)
+
+- **Suhani Aggarwal**  
+  [![GitHub](https://img.shields.io/badge/GitHub-000?logo=github&logoColor=white)](https://github.com/dpsvnsuha13039-wq)
+  [![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/suhani-aggarwal-478657323)
+
+-------
 
 
 
