@@ -1,10 +1,12 @@
 import { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Brain, Upload, MessageSquare, Network, Settings } from "lucide-react";
+import { Brain, Upload, MessageSquare, Network, Settings, BookOpen, Map } from "lucide-react";
 import UploadZone from './UploadZone';
 import ChatInterface from './ChatInterface';
 import KnowledgeGraph from './KnowledgeGraph';
+import QuizInterface from './QuizInterface';
+import MindmapGenerator from './MindmapGenerator';
 
 const Dashboard = () => {
   const [activeTab, setActiveTab] = useState('upload');
@@ -46,7 +48,7 @@ const Dashboard = () => {
         </div>
 
         <Tabs value={activeTab} onValueChange={setActiveTab} className="space-y-8">
-          <TabsList className="grid w-full grid-cols-3 bg-card/50 backdrop-blur-md border border-neural-connection/20">
+          <TabsList className="grid w-full grid-cols-5 bg-card/50 backdrop-blur-md border border-neural-connection/20">
             <TabsTrigger 
               value="upload" 
               data-tab="upload"
@@ -70,6 +72,22 @@ const Dashboard = () => {
             >
               <Network className="w-4 h-4" />
               Knowledge Graph
+            </TabsTrigger>
+            <TabsTrigger 
+              value="quiz"
+              data-tab="quiz"
+              className="flex items-center gap-2 data-[state=active]:bg-neural-node data-[state=active]:text-white transition-all duration-300"
+            >
+              <BookOpen className="w-4 h-4" />
+              Quizzes
+            </TabsTrigger>
+            <TabsTrigger 
+              value="analysis"
+              data-tab="analysis"
+              className="flex items-center gap-2 data-[state=active]:bg-neural-node data-[state=active]:text-white transition-all duration-300"
+            >
+              <Map className="w-4 h-4" />
+              Analysis Hub
             </TabsTrigger>
           </TabsList>
 
@@ -186,6 +204,14 @@ const Dashboard = () => {
                 </div>
               </div>
             </div>
+          </TabsContent>
+
+          <TabsContent value="quiz" className="space-y-6">
+            <QuizInterface />
+          </TabsContent>
+
+          <TabsContent value="analysis" className="space-y-6">
+            <MindmapGenerator />
           </TabsContent>
         </Tabs>
       </main>
