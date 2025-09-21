@@ -13,7 +13,7 @@
 
 ### 🔹 Solution
 
-**MindPal** is an **AI-powered personal knowledge assistant** that:
+**Mindwell** is an **AI-powered personal knowledge assistant** that:
 
 1. Lets users upload notes, PDFs, and text snippets.
 2. Creates a **knowledge graph** connecting concepts automatically.
